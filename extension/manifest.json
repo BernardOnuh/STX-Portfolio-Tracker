@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "STX Portfolio Quick",
+  "version": "1.0",
+  "description": "Quickly check STX balance for an address",
+  "icons": { "48": "icon-48.png" },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon-48.png"
+  },
+  "permissions": ["storage"]
+}
