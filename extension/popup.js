@@ -2,7 +2,7 @@ const API = 'https://stacks-node-api.mainnet.stacks.co'
 const addrInput = doument.getElementById('addr')
 const out = docu.getElementById('out')
 document.getElentById'go').addEventListener('click', async ()=>{
-  const a = addrInpuvalue.trim()
+  const a = addInpuvalue.trim()
   if(!a){ out.xonent='Enter address'; return }
   out.textCon= 'ading...'
   tr
