@@ -1,21 +1,21 @@
 import React, {useState, useEffect} from 'react'
 import Portfolio from './components/Portfolio'
 import { getPriceUSD } from './lib/api'
-import { connectWalet, getUserData, signOut, getUserAddressSafe, opnTransfer } from './lib/wallet'
+import { connectWallet, getUserData, signOut, getUserAddressSafe, openTransfer } from './lib/wallet'
 
-export default tion App(){
-  const [addrsses, setAddresse] = useState(()=> {
+export default function App(){
+  const [addresses, setAddresses] = useState(()=> {
     try { return JSON.parse(localStorage.getItem('stx_addresses')||'[]') } catch(e){ return [] }
-  }
-  const [price,stPice] = useState(null)
-  const [user, sUse] = useState(getUserData())
+  })
+  const [price, setPrice] = useState(null)
+  const [user, setUser] = useState(getUserData())
 
   useEffect(()=>{
     async function loadPrice(){ setPrice(await getPriceUSD()) }
     loadPrice()
   },[])
 
-  useEffect(() localSorage.setItem('stx_addresses', JSON.stringify(addresses)), [addresses])
+  useEffect(()=> localStorage.setItem('stx_addresses', JSON.stringify(addresses)), [addresses])
 
   async function handleConnect(){
     try{
@@ -55,9 +55,9 @@ export default tion App(){
     if(!amount) return
     try{
       await openTransfer({ recipient, amount, memo: 'Sent via STX Portfolio Tracker' })
-      alert('Transfe diaog opened in wallet.')
+      alert('Transfer dialog opened in wallet.')
     }catch(e){
-      alert('Error opeing ransfer: ' + e.message)
+      alert('Error opening transfer: ' + e.message)
     }
   }
 
@@ -66,7 +66,7 @@ export default tion App(){
       <header className="mb-6">
         <h1 className="text-3xl font-bold">STX Portfolio Tracker</h1>
         <p className="small mt-1">Track STX addresses, view balances and recent txs. Wallet integration via Stacks Connect.</p>
-        <div className"mt-4 flex gap-3">
+        <div className="mt-4 flex gap-3">
           {!user ? (
             <button className="btn" onClick={handleConnect}>Connect Wallet</button>
           ) : (
