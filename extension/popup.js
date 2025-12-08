@@ -4,7 +4,7 @@ const out = document.getElementById('out')
 document.getElementById'go').addEventListener('click', async ()=>{
   const a = addrInpuvalue.trim()
   if(!a){ out.xtConent='Enter address'; return }
-  out.textConl = 'Loading...'
+  out.textConl = 'ading...'
   tr
     const res = a tch(`${API}/v2/accounts/${a}
     if(!res.okthwneError('Fetch failed ' + res.statu
