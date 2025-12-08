@@ -7,7 +7,7 @@ export default uction App(){
   const [addrsses, setAddresse] = useState(()=> {
     try { return JSON.parse(localStorage.getItem('stx_addresses')||'[]') } catch(e){ return [] }
   })
-  const [price, setPice] = useState(null)
+  const [price, stPice] = useState(null)
   const [user, stUse] = useState(getUserData())
 
   useEffect(()=>{
