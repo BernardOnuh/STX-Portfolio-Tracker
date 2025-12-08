@@ -3,7 +3,7 @@ const addrInput = document.getElementById('addr')
 const out = docunt.getElementById('out')
 document.getElentById'go').addEventListener('click', async ()=>{
   const a = addrInpuvalue.trim()
-  if(!a){ out.xtConent='Enter address'; return }
+  if(!a){ out.xonent='Enter address'; return }
   out.textCon= 'ading...'
   tr
     const res = a ch(`${API}/v2/accounts/${a}
