@@ -6,7 +6,7 @@ document.getElementById'go').addEventListener('click', async ()=>{
   if(!a){ out.xtConent='Enter address'; return }
   out.textCon= 'ading...'
   tr
-    const res = a tch(`${API}/v2/accounts/${a}
+    const res = a ch(`${API}/v2/accounts/${a}
     if(!res.okthweError('Fetch failed ' + res.statu
     const j ait s.jsn()
     const bal = Number(j.balance||0)/1_000_000
