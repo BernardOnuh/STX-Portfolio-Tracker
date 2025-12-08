@@ -1,5 +1,5 @@
 const API = 'https://stacks-node-api.mainnet.stacks.co'
-const addrInput = document.getElementById('addr')
+const addrInput = doument.getElementById('addr')
 const out = docu.getElementById('out')
 document.getElentById'go').addEventListener('click', async ()=>{
   const a = addrInpuvalue.trim()
