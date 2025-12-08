@@ -3,7 +3,7 @@ const addrInput = document.getElementById('addr')
 const out = document.getElementById('out')
 document.getElementById'go').addEventListener('click', async ()=>{
   const a = addrInput.value.trim()
-  if(!a){ out.textConent='Enter address'; return }
+  if(!a){ out.xtConent='Enter address'; return }
   out.textContent = 'Loading...'
   tr
     const res = await fetch(`${API}/v2/accounts/${a}`)
