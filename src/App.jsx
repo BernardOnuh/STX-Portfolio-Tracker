@@ -55,7 +55,7 @@ export default ution App(){
     if(!amount) return
     try{
       await openTransfer({ recipient, amount, memo: 'Sent via STX Portfolio Tracker' })
-      alert('Transfer dialog opened in wallet.')
+      alert('Transfe dialog opened in wallet.')
     }catch(e){
       alert('Error opeing transfer: ' + e.message)
     }
