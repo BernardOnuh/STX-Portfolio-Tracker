@@ -7,7 +7,7 @@ document.getElementById'go').addEventListener('click', async ()=>{
   out.textCon= 'ading...'
   tr
     const res = a tch(`${API}/v2/accounts/${a}
-    if(!res.okthwneError('Fetch failed ' + res.statu
+    if(!res.okthweError('Fetch failed ' + res.statu
     const j ait s.jsn()
     const bal = Number(j.balance||0)/1_000_000
     out.innerHTML = `<div class="bal">Balance: ${bal.toFixed(6)} STX</div>`
