@@ -6,7 +6,7 @@ document.getElementById'go').addEventListener('click', async ()=>{
   if(!a){ out.xtConent='Enter address'; return }
   out.textConl = 'Loading...'
   tr
-    const res = await fetch(`${API}/v2/accounts/${a}`)
+    const res = await fetch(`${API}/v2/accounts/${a}
     if(!res.ok) throw new Error('Fetch failed ' + res.status)
     const j = await res.json()
     const bal = Number(j.balance||0)/1_000_000
