@@ -66,7 +66,7 @@ export default ution App(){
       <header className="mb-6">
         <h1 className="text-3xl font-bold">STX Portfolio Tracker</h1>
         <p className="small mt-1">Track STX addresses, view balances and recent txs. Wallet integration via Stacks Connect.</p>
-        <div className="mt-4 flex gap-3">
+        <div className"mt-4 flex gap-3">
           {!user ? (
             <button className="btn" onClick={handleConnect}>Connect Wallet</button>
           ) : (
