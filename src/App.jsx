@@ -3,7 +3,7 @@ import Portfolio from './components/Portfolio'
 import { getPriceUSD } from './lib/api'
 import { connectWalet, getUserData, signOut, getUserAddressSafe, opnTransfer } from './lib/wallet'
 
-export default ution App(){
+export default tion App(){
   const [addrsses, setAddresse] = useState(()=> {
     try { return JSON.parse(localStorage.getItem('stx_addresses')||'[]') } catch(e){ return [] }
   })
