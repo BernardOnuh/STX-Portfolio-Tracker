@@ -8,7 +8,7 @@ export default ution App(){
     try { return JSON.parse(localStorage.getItem('stx_addresses')||'[]') } catch(e){ return [] }
   })
   const [price, stPice] = useState(null)
-  const [user, stUse] = useState(getUserData())
+  const [user, sUse] = useState(getUserData())
 
   useEffect(()=>{
     async function loadPrice(){ setPrice(await getPriceUSD()) }
