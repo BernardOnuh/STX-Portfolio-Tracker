@@ -1,45 +1,72 @@
-STX Portfolio Tracker – Web App + Chrome Extension
-A full-featured portfolio tracking tool built on the Stacks blockchain, enabling users to monitor STX holdings across multiple addresses, view real-time balances, check price data, and connect their Stacks wallet seamlessly. The project includes a responsive web interface and a Chrome extension for quick access.
-🚀 Overview
-STX Portfolio Tracker is a lightweight, contract-free application designed to make it easy for anyone to track their Stacks assets. It leverages the Stacks API, @stacks/connect, and public blockchain data to deliver a smooth and intuitive monitoring experience without needing smart contracts or backend infrastructure.
-✨ Key Features
-🔗 Stacks Wallet Integration
-Connect instantly using @stacks/connect.
-Automatically detect the user’s STX mainnet address.
-Secure, non-custodial authentication.
-📊 Real-Time Portfolio Tracking
-Fetch balances for multiple STX addresses.
-Display total STX and USD value.
-Pulls live market data from CoinGecko.
-Shows total holdings and individual address stats.
-📮 Activity Monitoring
-Displays recent transactions per address.
-Includes inbound/outbound STX details.
-Uses the Hiro Stacks API for reliable chain data.
-🧩 Chrome Extension Included
-Quick-access popup for checking STX balances.
-Wallet connect support.
-Lightweight extension powered by the same engine as the web version.
-🎨 Beautiful UI
-Built with TailwindCSS for a clean, modern interface.
-Mobile-optimized, fully responsive layout.
-⚡ No Smart Contract Needed
-This project runs entirely on:
-client-side React
-public blockchain APIs
-Stacks wallet connection
-No Clarity contract required.
-🛠 Tech Stack
-React + Vite – Fast, modern front-end tooling
-TailwindCSS – Streamlined UI styling
-@stacks/connect – Wallet integration
-Stacks API – On-chain data (balances, txs)
-CoinGecko API – Real-time STX/USD price
-Manifest V3 – Chrome extension
-LocalStorage – Persistent multi-address watchlist
-📦 Project Structure
-Copy code
+# STX Portfolio Tracker – Web App + Chrome Extension
 
+A full-featured portfolio tracking tool built on the **Stacks blockchain**, enabling users to monitor STX holdings across multiple addresses, view real-time balances, check live market prices, and connect their Stacks wallet seamlessly.  
+Includes both a **responsive web app** and a **Chrome extension** for quick access.
+
+---
+
+## 🚀 Overview
+**STX Portfolio Tracker** is a lightweight, contract‑free application designed for effortless tracking of Stacks assets.  
+It uses:
+
+- Stacks API  
+- @stacks/connect  
+- Public blockchain endpoints  
+
+No smart contracts or backend servers required.
+
+---
+
+## ✨ Key Features
+
+### 🔗 Stacks Wallet Integration
+- One‑click connection via **@stacks/connect**  
+- Automatically detects mainnet STX address  
+- Fully non‑custodial authentication  
+
+### 📊 Real-Time Portfolio Tracking
+- Track balances for multiple STX addresses  
+- Shows total STX + USD value  
+- Fetches market data via **CoinGecko API**  
+- Clean breakdown of individual address statistics  
+
+### 📮 Activity Monitoring
+- Displays recent transactions  
+- Inbound/outbound STX transfers  
+- Uses **Hiro Stacks API** for accurate chain data  
+
+### 🧩 Chrome Extension Included
+- Quick-access popup  
+- Wallet connect support  
+- Same core engine as the web app  
+
+### 🎨 Beautiful UI
+- Built with **TailwindCSS**  
+- Fully responsive + mobile optimized  
+
+### ⚡ Zero Smart Contracts
+Runs 100% on:
+- React (client-side)  
+- Stacks public APIs  
+- Wallet connection  
+No Clarity contract required.
+
+---
+
+## 🛠 Tech Stack
+
+- **React + Vite** – Fast modern frontend  
+- **TailwindCSS** – UI styling  
+- **@stacks/connect** – Wallet integration  
+- **Stacks API** – Balances + transactions  
+- **CoinGecko API** – Market data  
+- **Manifest V3** – Chrome extension  
+- **LocalStorage** – Persistent watchlist  
+
+---
+
+## 📦 Project Structure
+```
 stx-portfolio-tracker/
 │── web/
 │   ├── src/
@@ -52,20 +79,47 @@ stx-portfolio-tracker/
 │   ├── popup.html
 │   ├── popup.js
 │   └── icon assets
-🔧 How It Works
-User connects their Stacks wallet
-The app fetches their STX address
-Users can add more addresses to track
-Balances + transactions are fetched from the Stacks API
-Price data is fetched from CoinGecko
-Data is aggregated into a clean portfolio dashboard
-🌐 Deployment
-The web app can be deployed instantly on Vercel, Netlify, or GitHub Pages since it’s a fully client-side application.
-The Chrome extension loads via the chrome://extensions interface in developer mode.
-📄 License
-MIT License – free to use, modify, and build on.
-💡 Future Enhancements
-STX stacking rewards calculator
-NFT holdings viewer
-User-saved presets with cloud sync
-Address tagging & notes
+```
+
+---
+
+## 🔧 How It Works
+1. User connects their Stacks wallet  
+2. Application fetches their STX address  
+3. User adds additional addresses to monitor  
+4. Balances + transactions loaded from Stacks API  
+5. Price data loaded from CoinGecko  
+6. Dashboard aggregates total portfolio view  
+
+---
+
+## 🌐 Deployment
+
+### ✔ Web App
+Deploy instantly on:
+- **Vercel**
+- **Netlify**
+- **GitHub Pages**
+
+Client-side only → No backend needed.
+
+### ✔ Chrome Extension
+Load the `extension/` folder using:
+```
+chrome://extensions
+→ Enable Developer Mode
+→ Load unpacked
+```
+
+---
+
+## 📄 License
+**MIT License** – Free to use, modify, and build on.
+
+---
+
+## 💡 Future Enhancements
+- STX stacking rewards calculator  
+- NFT holdings viewer  
+- Cloud-synced presets  
+- Address tagging + notes  
