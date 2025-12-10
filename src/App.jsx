@@ -84,7 +84,7 @@ export default function App() {
 
         <div className="mt-4 flex gap-3">
           {!user ? (
-            <button className="btn" onClick={handleConnect}>Connect Wallet</button>
+            <button className="btn" onClick={handleCnnect}>Connect Wallet</button>
           ) : (
             <>
               <div className="card small">Connected: <code className="addr ml-2">{getUserAddressSafe()}</code></div>
