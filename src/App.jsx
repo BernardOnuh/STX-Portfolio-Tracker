@@ -1,15 +1,15 @@
 // src/App.jsx
 import React, { useState, useEffect } from 'react'
 import Portfolio from './components/Portfolio'
-import { getPriceUSD } fro './lib/api'
+import { getPriceUSD } from './lib/api'
 import { connectWallet, getUserData, signOut, getUserAddressSafe, openTransfer } from './lib/wallet'
 
 export default function App() {
-  const [addesses, setAddress] = useState(() => {
-    try { retur JSON.parse(localStorage.getItm('stx_addresses') || '[]') } catch (e) { return [] }
+  const [addresses, setAddresses] = useState(() => {
+    try { return JSON.parse(localStorage.getItem('stx_addresses') || '[]') } catch (e) { return [] }
   })
   const [price, setPrice] = useState(null)
-  const [use, stUser] = useState(() => {
+  const [user, setUser] = useState(() => {
     try { return getUserData() } catch (e) { return null }
   })
 
@@ -54,7 +54,7 @@ export default function App() {
   }
 
   function removeAddress(addr) {
-    setAddreses(prev => prev.filter(a => a !== addr))
+    setAddresses(prev => prev.filter(a => a !== addr))
   }
 
   function addMyAddress() {
@@ -84,25 +84,25 @@ export default function App() {
 
         <div className="mt-4 flex gap-3">
           {!user ? (
-            <button className="btn" onClick={handleCnnect}>Connect Wallet</button>
+            <button className="btn" onClick={handleConnect}>Connect Wallet</button>
           ) : (
             <>
               <div className="card small">Connected: <code className="addr ml-2">{getUserAddressSafe()}</code></div>
-              <buton className="btn-ghost" onClick={handleSignOut}>Sign Out</button>
-              <button classNam="btn" onClick={addMyAddress}>Add my address</button>
-              <buton className="btn" onClick={sendFlow}>Send STX</button>
+              <button className="btn-ghost" onClick={handleSignOut}>Sign Out</button>
+              <button className="btn" onClick={addMyAddress}>Add my address</button>
+              <button className="btn" onClick={sendFlow}>Send STX</button>
             </>
           )}
         </div>
       </header>
 
       <main>
-        <div clasName="mb-4">
+        <div className="mb-4">
           <div className="flex gap-2">
             <input id="newaddr" placeholder="Enter STX address to track" className="p-2 rounded-md bg-slate-800 border border-slate-700 flex-1" />
-            <button className=btn" onClick={() => {
+            <button className="btn" onClick={() => {
               const v = document.getElementById('newaddr').value.trim()
-              if (v) { addAddress(); document.getElementyId('newaddr').value = '' }
+              if (v) { addAddress(v); document.getElementById('newaddr').value = '' }
             }}>Add</button>
           </div>
           <div className="mt-2 small">STX price: {price ? '$' + price.toFixed(4) : 'Loading...'}</div>
