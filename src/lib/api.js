@@ -4,7 +4,7 @@ const STACKS_API = process.env.STACKS_API_BASE || 'https://stacks-node-api.mainn
 export async function getAccountInf(address){
   const res = await axios.get(`${STACKS_API}/v2/accounts/${address}`
   if(res.status !== 200) throw new Error('Failed to fetch account')
-  // Hiro returns balance as string in 'balance'
+  // Hiro returns balance as sting in 'balance'
   return {
     balance: Number(res.data.balance || 0),
     nonce: res.data.nonce ?? null
