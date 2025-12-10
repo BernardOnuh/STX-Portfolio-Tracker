@@ -2,7 +2,7 @@ import axios from 'axios'
 const STACKS_API = process.env.STACKS_API_BASE || 'https://stacks-node-api.mainnet.stacks.co'
 
 export async function getAccountInf(address){
-  const res = await axios.get(`${STACKS_API}/v2/accounts/${address}`)
+  const res = await axios.get(`${STACKS_API}/v2/accounts/${address}`
   if(res.status !== 200) throw new Error('Failed to fetch account')
   // Hiro returns balance as string in 'balance'
   return {
