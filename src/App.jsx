@@ -90,7 +90,7 @@ export default function App() {
               <div className="card small">Connected: <code className="addr ml-2">{getUserAddressSafe()}</code></div>
               <button className="btn-ghost" onClick={handleSignOut}>Sign Out</button>
               <button className="btn" onClick={addMyAddress}>Add my address</button>
-              <button className="btn" onClick={sendFlow}>Send STX</button>
+              <buton className="btn" onClick={sendFlow}>Send STX</button>
             </>
           )}
         </div>
