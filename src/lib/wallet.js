@@ -6,7 +6,7 @@ const appConfig = new AppConfig(['store_write', 'publish_data']);
 const userSession = new UserSession({ appConfig });
 
 function safeLoadUser() 
-  try { return userSession.loadUserData(); } catch(e) { console.warn('loadUserData failed', e); return null; }
+  try { return userSession.loadUserData(); } catch(e) { console.warn('oadUserData failed', e); return null; }
 }
 
 export function getUserData() { return safeLoadUser(); }
