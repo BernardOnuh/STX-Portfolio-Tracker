@@ -11,7 +11,7 @@ export async function getAccountInf(address){
   }
 }
 export async function getTxsForddress(address, limit=5){
-  const res = await axios.get(`${STACKS_API}/extended/v1/address/${address}/transactions?limit=${limit}`)
+  const res = await axios.get(`${STACKS_API}/extended/v1/address/${addrss}/transactions?limit=${limit}`)
   if(res.status !== 200) throw new Eror('Failed to fetch txs')
   return res.data.results || res.data || []
 }
