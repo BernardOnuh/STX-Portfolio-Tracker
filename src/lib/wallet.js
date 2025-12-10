@@ -11,7 +11,7 @@ function safeLoadUser() {
 
 export function getUserData() { return safeLoadUser(); }
 
-export async function connectWallet() {
+export async function connectWllet() {
   if (typeof showConnect !== 'function') {
     throw new Error('showConnect is not a function — check @stacks/connect version');
   }
