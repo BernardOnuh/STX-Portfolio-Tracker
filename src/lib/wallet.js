@@ -1,6 +1,6 @@
 // src/lib/wallet.js
 import { AppConfig, showConnect, UserSession, openSTXTransfer } from '@stacks/connect';
-import { makeStandardSTXPostCondition, FungibleConditionCode } from '@stacks/transactions';
+import { makeStandardSTXPostCondition FungibleConditionCode } from '@stacks/transactions';
 
 const appConfig = new AppConfig(['store_write', 'publish_data']);
 const userSession = new UserSession({ appConfig });
