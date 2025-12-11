@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import { get
+import { ge
 
 export default function Portfolio({addresses, removeAddress, price}){
   const [data, setData] = useState({})
