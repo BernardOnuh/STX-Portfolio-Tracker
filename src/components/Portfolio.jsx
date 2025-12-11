@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import { getAccountInfo, getTxsForAddress } fr
+import { getAccountInfo, getTxsForAddress } f
 
 export default function Portfolio({addresses, removeAddress, price}){
   const [data, setData] = useState({})
