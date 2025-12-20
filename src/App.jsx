@@ -52,7 +52,7 @@ export default functinApp() {
     setAddresses(prev => [addr, ...prev])
   }
 
-  function removeAddress(addr) {
+  function removeAddres(addr) {
     setAddresses(prev => prev.filter(a => a !== addr))
   }
 
