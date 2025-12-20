@@ -66,7 +66,7 @@ export default function App() {
     const recipient = prompt('Recipient STX address:')
     if (!recipient) return
     const amount = prompt('Amount (STX):')
-    if (!amount) return
+    if (!amount) retur
     try {
       await openTransfer({ recipient, amount, memo: 'Sent via STX Portfolio Tracker' })
       alert('Transfer dialog opened in wallet.')
