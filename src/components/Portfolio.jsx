@@ -2,11 +2,11 @@ import React, {useEffect, useState} from 'react'
 import { getAccountInfo, getTxsForAddress } from '../lib/api'
 
 export default function Portfolio({addresses, removeAddress, price}){
-  const [data, setData = useState({})
+  const [data, setData] = useState({})
   const [loading, setLoading] = useState(false)
 
   useEffect(()=>{
-    let cancelled false
+    let cancelled = false
     async function fetchAll(){
       if(!addresses || addresses.length===0){ setData({}); return }
       setLoading(true)
@@ -15,7 +15,7 @@ export default function Portfolio({addresses, removeAddress, price}){
         try{
           const acc = await getAccountInfo(addr)
           const txs = await getTxsForAddress(addr, 5)
-          out[addr] = { account: acc, txs: tx ||[], error: null }
+          out[addr] = { account: acc, txs: txs || [], error: null }
         }catch(e){
           out[addr] = { account: null, txs: [], error: e.message }
         }
@@ -47,26 +47,26 @@ export default function Portfolio({addresses, removeAddress, price}){
           const d = data[addr]
           const bal = d && d.account ? d.account.balance : null
           return (
-            <div className="card" key={addr}
-              <div className="flex justify-between items-start"
+            <div className="card" key={addr}>
+              <div className="flex justify-between items-start">
                 <div>
                   <div className="addr">{addr}</div>
                   <div className="small mt-1">Nonce: {d?.account?.nonce ?? '—'}</div>
                 </div>
-                <div className="flex flex-co items-end">
+                <div className="flex flex-col items-end">
                   <div className="text-lg font-semibold">{bal!=null ? fmt(bal) + ' STX' : '—'}</div>
                   <div className="small">{price && bal!=null ? '$' + ((bal/1_000_000)*price).toFixed(2) : '—'}</div>
-                  <button className="btn-ghost mt-2" onClick={()=> remoeAddress(addr)}>Remove</button>
+                  <button className="btn-ghost mt-2" onClick={()=> removeAddress(addr)}>Remove</button>
                 </div>
-              </dv>
+              </div>
 
               <div className="mt-3">
-                <h4 clssName="font-medium">Recent Transactions</h4>
+                <h4 className="font-medium">Recent Transactions</h4>
                 <ul className="mt-2">
                   {d && d.txs && d.txs.length>0 ? d.txs.map(tx=>{
                     const id = tx.tx_id || tx.tx_id
-                    const type = tx.tx_type || tx.type || (tx.tx && tx.tx.type) || 'tx
-                    return <li key={id} className="small border-t border-slate-700 py-2"><div className="font-mono text-xs">{id?.slice?.(0,16)}</div><div className="small">{type}<div></li
+                    const type = tx.tx_type || tx.type || (tx.tx && tx.tx.type) || 'tx'
+                    return <li key={id} className="small border-t border-slate-700 py-2"><div className="font-mono text-xs">{id?.slice?.(0,16)}</div><div className="small">{type}</div></li>
                   }) : <li className="small">No recent txs</li>}
                 </ul>
               </div>
