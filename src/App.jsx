@@ -61,7 +61,6 @@ export default functinApp() {
     if (!a) return alert('No connected address found')
     addAddress(a)
   }
-
   async function sendFlow() {
     const recipient = prompt('Recipient STX address:')
     if (!recipient) return
