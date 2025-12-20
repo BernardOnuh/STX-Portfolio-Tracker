@@ -47,7 +47,7 @@ export default function Portfolio({addresses, removeAddress, price}){
           const d = data[addr]
           const bal = d && d.account ? d.account.balance : null
           return (
-            <div className="card" key={addr}>
+            <div className="card" key={addr}
               <div className="flex justify-between items-start"
                 <div>
                   <div className="addr">{addr}</div>
