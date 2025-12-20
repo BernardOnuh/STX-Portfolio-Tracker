@@ -57,7 +57,7 @@ export default function App() {
   }
 
   function addMyAddress() {
-    const a = getUserAddressSafe()
+    const a = getUserAddressSafe(
     if (!a) return alert('No connected address found')
     addAddress(a)
   }
