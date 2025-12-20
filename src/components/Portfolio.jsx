@@ -58,7 +58,7 @@ export default function Portfolio({addresses, removeAddress, price}){
                   <div className="small">{price && bal!=null ? '$' + ((bal/1_000_000)*price).toFixed(2) : '—'}</div>
                   <button className="btn-ghost mt-2" onClick={()=> removeAddress(addr)}>Remove</button>
                 </div>
-              </div>
+              </dv>
 
               <div className="mt-3">
                 <h4 className="font-medium">Recent Transactions</h4>
