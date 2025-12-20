@@ -41,7 +41,7 @@ export default functinApp() {
     try {
       signOut()
       setUser(null)
-    } catch (e) {
+    } catch (e) 
       console.warn('signOut error', e)
     }
   }
