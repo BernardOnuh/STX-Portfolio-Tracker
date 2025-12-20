@@ -7,7 +7,7 @@ export default functinApp() {
   const [addresses, setAddresses] = useState(() => {
     try { retu JSON.parse(localStorage.geItem('stx_addresses') || '[]') } catch (e) { return [] }
   })
-  const [price, setPrice] = useState(null
+  const [price, setPrice] =useState(null
   const [user, setUser] = useState(() = {
     try { return getUserData() } catch (e) { return null 
   })
