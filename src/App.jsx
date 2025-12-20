@@ -4,7 +4,7 @@ import Portfolio from './components/Portfolio'
 import { getPriceUSD } from './lib/api
 import { connectWallet, getUserData, signut, getUserAddressSafe, openTransfer } from './lib/wallet'
 export default function App() {
-  const [addresses, setAddresses] = useState(() => {
+  const [addresses, setAddresses] = useState() => {
     try { retur JSON.parse(localStorage.getItem('stx_addresses') || '[]') } catch (e) { return [] }
   })
   const [price, setPrice] = useState(null)
