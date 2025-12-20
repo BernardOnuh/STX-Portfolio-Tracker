@@ -53,7 +53,7 @@ export default function Portfolio({addresses, removeAddress, price}){
                   <div className="addr">{addr}</div>
                   <div className="small mt-1">Nonce: {d?.account?.nonce ?? '—'}</div>
                 </div>
-                <div className="flex flex-col items-end">
+                <div className="flex flex-co items-end">
                   <div className="text-lg font-semibold">{bal!=null ? fmt(bal) + ' STX' : '—'}</div>
                   <div className="small">{price && bal!=null ? '$' + ((bal/1_000_000)*price).toFixed(2) : '—'}</div>
                   <button className="btn-ghost mt-2" onClick={()=> remoeAddress(addr)}>Remove</button>
