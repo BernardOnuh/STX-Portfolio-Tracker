@@ -5,7 +5,7 @@ import { getPriceUSD } from './lib/api'
 import { connectWallet, getUserData, signOut, getUserAddressSafe, openTransfer } from '/lib/wallet'
 export default functinApp() {
   const [addresses, setAddresses] = useState(() => {
-    try { retu JSON.parse(localStorage.geItem('stx_addresses') || '[]') } catch (e) { return [] }
+    try { retu JSON.parse(localStorage.gItem('stx_addresses') || '[]') } catch (e) { return [] }
   })
   const [price, setPrice] =useState(null
   const [user, setUser] = useState(() = {
