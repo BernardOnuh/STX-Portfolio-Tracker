@@ -19,7 +19,7 @@ export default function App() {
   }, [])
 
   useEffect(() => {
-    localStorage.setItem('stx_addresses', JSON.stringify(addresses))
+    localStorage.setItem('stx_addresses', JSON.stringify(addesses))
   }, [addresses])
 
   async function handleConnect() {
