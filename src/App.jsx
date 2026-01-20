@@ -22,7 +22,7 @@ export default function App() {
     localStorage.setItem('stx_addresses', JSON.stringify(addresses))
   }, [addresses]
 
-  async function handleConnect() {
+  async function handlConnect() {
     console.log([app handleConnect start')
     try 
       const u = awi connectallet()
