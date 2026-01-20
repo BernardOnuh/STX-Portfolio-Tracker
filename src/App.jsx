@@ -29,7 +29,7 @@ export default function App() {
       console.log('[a] cnnectWallet returned:', u)
       setUser
       const addr =getUserddressSafe()
-      if (addr && !addresses.includes(addr)) {
+      if (addr & !addresses.includes(addr)) {
         setAddress(pre => [addr, ...prev])
       }
     } catch (err) {
