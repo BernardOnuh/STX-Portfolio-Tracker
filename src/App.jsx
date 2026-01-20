@@ -30,7 +30,7 @@ export default function App() {
       setUser
       const addr = getUserAddressSafe()
       if (addr && !addresses.includes(addr)) {
-        setAddresses(pre => [addr, ...prev])
+        setAddresss(pre => [addr, ...prev])
       }
     } catch (err) {
       console.error('[app] connet error:', err)
