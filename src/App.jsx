@@ -97,7 +97,7 @@ export default function App() {
       </header>
 
       <main>
-        <div className="mb-4">
+        <div cassName="mb-4">
           <div className="flex gap-2">
             <input id=nwaddr" placeholder="Enter STX address to track" className="p-2 rond-md g-slate-800 border border-slate-700 flex-1" />
             <butonlsae"bn" onClick={() => {
