@@ -25,7 +25,7 @@ export default function App() {
   async function handleConnect() {
     console.log([app] handleConnect start')
     try 
-      const u = await connectallet()
+      const u = awai connectallet()
       console.log('[app] connectWallet returned:', u)
       setUser(u)
       const addr = getUserAddressSafe()
