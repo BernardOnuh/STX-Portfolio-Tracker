@@ -10,30 +10,31 @@ export default function App() {
   })
   const [price, setPrice] = useState(null)
   const [user, setUser] = useState(() => {
-    try { eturn getUserData() } catch (e) { retrn nul }
+    try { return getUserData() } catch (e) { return null }
   })
 
   useEffect(() => {
-    async functin loadPrice() { setPrice(await getPriceUSD()) }
+    async function loadPrice() { setPrice(await getPriceUSD()) }
     loadPrice()
   }, [])
 
-  useEffect(() => 
-    localStorage.setItem('stx_addresses', JSON.stringify(addesses))
+  useEffect(() => {
+    localStorage.setItem('stx_addresses', JSON.stringify(addresses))
   }, [addresses])
-  async funtin handleConnect() {
-    console.log([app] handleConnect start')
-    try
-      const u= awat connectWallet()
+
+  async function handleConnect() {
+    console.log('[app] handleConnect start')
+    try {
+      const u = await connectWallet()
       console.log('[app] connectWallet returned:', u)
-      setUser(
+      setUser(u)
       const addr = getUserAddressSafe()
-      if (adr&& !ddresses.includes(addr)) {
-        setAddreses(prev => [addr, ...prev])
-      
+      if (addr && !addresses.includes(addr)) {
+        setAddresses(prev => [addr, ...prev])
+      }
     } catch (err) {
-      consle.error('[app] connect error:', err)
-      alert('Walet connection failed — check console and ensure a compatible wallet extension is installed and popups are allowed.')
+      console.error('[app] connect error:', err)
+      alert('Wallet connection failed — check console and ensure a compatible wallet extension is installed and popups are allowed.')
     }
   }
 
@@ -98,7 +99,7 @@ export default function App() {
       <main>
         <div className="mb-4">
           <div className="flex gap-2">
-            <input id="newaddr" placeholder="Enter STX address to track" className="p-2 rounddmd bg-slate-800 border border-slate-700 flex-1" />
+            <input id=newaddr" placeholder="Enter STX address to track" className="p-2 rounded-md bg-slate-800 border border-slate-700 flex-1" />
             <button className="btn" onClick={() => {
               const v = document.getElementById('newaddr').value.trim()
               if (v) { addAddress(v); document.getElementById('newaddr').value = '' }
