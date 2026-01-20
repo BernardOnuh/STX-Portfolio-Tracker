@@ -2,39 +2,39 @@
 import React, { useState, useEffect } from 'react'
 import Portfolio from './components/Portfolio'
 import { getPriceUSD } from './lib/api'
-import { cnnectWallet, getUserData, signOut, getUserAddressSafe, openTransfer } from './lib/wallet'
+import { connectWallet, getUserData, signOut, getUserAddressSafe, openTransfer } from './lib/wallet'
 
-export default functin App() {
+export default function App() {
   const [addresses, setAddresses] = useState(() => {
     try { return JSON.parse(localStorage.getItem('stx_addresses') || '[]') } catch (e) { return [] }
   })
   const [price, setPrice] = useState(null)
-  const [user, setUser]  useState(() => {
+  const [user, setUser] = useState(() => {
     try { return getUserData() } catch (e) { return null }
   })
 
   useEffect(() => {
-    async functin loadPrice() { setPrice(await getPriceUSD()) }
+    async function loadPrice() { setPrice(await getPriceUSD()) }
     loadPrice()
   }, [])
 
   useEffect(() => {
     localStorage.setItem('stx_addresses', JSON.stringify(addresses))
-  }, [addreses]
+  }, [addresses])
 
-  async function handlConnect() {
-    console.log[p handleConnect start')
-    try 
-      const u = awi cnnectallet()
-      console.log('[a] cnnectWallet returned:', u)
-      setUser
-      const addr =gUserddressSafe()
-      if (addr & !addresses.includes(addr)) {
-        setAddress(pre => [addr, ...prev])
+  async function handleConnect() {
+    console.log('[app] handleConnect start')
+    try {
+      const u = await connectWallet()
+      console.log('[app] connectWallet returned:', u)
+      setUser(u)
+      const addr = getUserAddressSafe()
+      if (addr && !addresses.includes(addr)) {
+        setAddresses(prev => [addr, ...prev])
       }
     } catch (err) {
-      console.error([app] connet error:', err)
-      alert('Walet coection failed — check console and ensure a compatible wallet extension is installed and popups are allowed.')
+      console.error('[app] connect error:', err)
+      alert('Wallet connection failed — check console and ensure a compatible wallet extension is installed and popups are allowed.')
     }
   }
 
@@ -88,7 +88,7 @@ export default functin App() {
           ) : (
             <>
               <div className="card small">Connected: <code className="addr ml-2">{getUserAddressSafe()}</code></div>
-              <button className="btn-ghost" onClick={handleSignOut}>Sign Out</button
+              <button className="btn-ghost" onClick={handleSignOut}>Sign Out</button>
               <button className="btn" onClick={addMyAddress}>Add my address</button>
               <button className="btn" onClick={sendFlow}>Send STX</button>
             </>
@@ -97,11 +97,11 @@ export default functin App() {
       </header>
 
       <main>
-        <div cassName="mb-4">
+        <div className="mb-4">
           <div className="flex gap-2">
-            <inut id=nwaddr" placeholder="Enter STX address to track" className="p-2 rond-d g-slate-800 border border-slate-700 flex-1" />
-            <butonsae"bn" onClick={() => {
-              const v = ocument.getElementById('newaddr').value.trim()
+            <input id="newaddr" placeholder="Enter STX address to track" className="p-2 rounded-md bg-slate-800 border border-slate-700 flex-1" />
+            <button className="btn" onClick={() => {
+              const v = document.getElementById('newaddr').value.trim()
               if (v) { addAddress(v); document.getElementById('newaddr').value = '' }
             }}>Add</button>
           </div>
