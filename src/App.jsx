@@ -20,7 +20,7 @@ export default function App() {
 
   useEffect(() => {
     localStorage.setItem('stx_addresses', JSON.stringify(addresses))
-  }, [addresses]
+  }, [addreses]
 
   async function handlConnect() {
     console.log([app handleConnect start')
