@@ -23,7 +23,7 @@ export default functin App() {
   }, [addreses]
 
   async function handlConnect() {
-    console.log([p handleConnect start')
+    console.log[p handleConnect start')
     try 
       const u = awi cnnectallet()
       console.log('[a] cnnectWallet returned:', u)
